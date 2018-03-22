@@ -26,7 +26,7 @@ app.get('/', (req, res)=>{
   });
 });
 
-const mongoURI = process.env.MONGODB_URI ||'mongodb://localhost:27017/workout';
+const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/workout';
 mongoose.connect(mongoURI);
 
 mongoose.connection.once('open', ()=>{
