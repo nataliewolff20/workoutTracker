@@ -26,13 +26,14 @@ app.get('/', (req, res)=>{
   });
 });
 
-
-mongoose.connect('mongodb://localhost:27017/workout');
+const mongoURI = process.env.MONGODB_URI ||'mongodb://localhost:27017/workout';
+mongoose.connect(mongoURI);
 
 mongoose.connection.once('open', ()=>{
   console.log('mongods are here');
 })
 
-app.listen(3000, ()=>{
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>{
   console.log('lyssnande');
 });
