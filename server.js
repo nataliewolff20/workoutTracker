@@ -26,7 +26,7 @@ app.get('/', (req, res)=>{
   });
 });
 
-const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/workout';
+const mongoURI =  process.env.MONGODB_URI || 'mongodb://localhost:27017/workout';
 mongoose.connect(mongoURI);
 
 mongoose.connection.once('open', ()=>{
@@ -34,6 +34,6 @@ mongoose.connection.once('open', ()=>{
 })
 
 const port = process.env.PORT || 3000;
-app.listen(port, ()=>{
+app.listen( port, ()=>{
   console.log('lyssnande');
 });
