@@ -4,9 +4,19 @@ const Workouts = require('../models/workouts.js');
 
 
 router.post('/', (req, res)=>{
+  if(req.body.run === 'on'){
+    req.body.run = true;
+  } else {
+    req.body.run = false;
+  };
+  if(req.body.weights === 'on'){
+    req.body.weights = true;
+  } else {
+    req.body.weights = false;
+  };
+
   Workouts.create(req.body, (err, createdWorkouts)=>{
-    // res.send(req.body);
-    res.redirect('/workouts');
+    res.redirect('/workouts/intensity');
   });
 });
 
@@ -48,6 +58,8 @@ router.get('/:id/edit', (req, res)=>{
 	});
 });
 
+
+
 router.get('/:id', (req, res)=>{
   Workouts.findById(req.params.id, (err, foundWorkouts)=>{
     res.render('workouts/show.ejs', {
@@ -56,6 +68,11 @@ router.get('/:id', (req, res)=>{
   });
 });
 
+router.put('/:id', (req, res)=>{
+  Workouts.findByIdAndUpdate(req.params.id, req.body, ()=>{
+    res.redirect('/workouts');
+  });
+});
 
 
 

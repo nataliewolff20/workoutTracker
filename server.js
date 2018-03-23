@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const Workouts = require('./models/workouts.js');
 
-
+app.use(express.urlencoded({extended:false}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 

@@ -12,7 +12,6 @@ const workoutsSchema = mongoose.Schema({
     date: Date,
     run: Boolean,
     weights: Boolean,
-    yoga: Boolean,
     notes: String
 
 });

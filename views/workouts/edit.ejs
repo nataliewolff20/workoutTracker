@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit <%=workouts.date%> Workout</h1>
+
+    <form action="/workouts/<%=workouts.id%>?_method=PUT" method="POST">
+      Date:<input type="date" name="Date" value="<%=workouts.date%>"/><br/>
+      Run:<input type="checkbox" name="run" value="Update Run"/><br/>
+      Weights:<input type="checkbox" name="weights" value="Update Weights"/><br/>
+      Notes:<input type="text" name="notes" value="<%=workouts.notes%>"/><br/>
+      <input type="submit" name="" value="Update Workout"/>
+
+    </form>
+
+  </body>
+</html>

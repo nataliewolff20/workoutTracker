@@ -2,6 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+
     <title>Log Your Workout</title>
   </head>
   <body>
@@ -14,10 +18,10 @@
 
     <legend>Workout Details</legend>
     <label for="date">Date</label>
-      <input type="date" name="date" placeholder="Date" id="date"/>
+      <input type="date" name="date" placeholder="Date" id="date"/> <br/>
 
     <span>Workout Type</span>
-  <div class="workout-type">
+  <div class="custom-control custom-checkbox">
 
 
     <label for="workout-type">Run
@@ -25,9 +29,6 @@
     </label>
     <label for="workout-type">Weight Lifting
       <input type="checkbox" id="weights" name="weights" value="weights"/>
-    </label>
-    <label for="workout-type">Yoga
-      <input type="checkbox" id="yoga" name="yoga" value="yoga"/>
     </label>
   </div>
 
