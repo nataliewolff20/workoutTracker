@@ -3,9 +3,12 @@ const router = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
+const Form = require('../models/form.js');
+const mongoose = require ('mongoose');
 
-//post route
+//create route
 router.post ('/workoutlog', (req, res)=>{
+  res.send(req.body);
   res.redirect('/sessions/workouts/index')
 });
 
@@ -13,7 +16,7 @@ router.get('/workouts/index', (req, res)=>{
   res.render('workouts/index.ejs');
 });
 
-//fill out the form page
+//new route (wkout form)
 router.get('/form', (req, res)=>{
   res.render('sessions/form.ejs');
 });
