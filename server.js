@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 
 app.use(methodOverride('_method'));
 app.use(session({
@@ -12,6 +13,7 @@ app.use(session({
 }))
 
 app.use(express.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:false}));
 
 const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
