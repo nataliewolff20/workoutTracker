@@ -1,41 +1,31 @@
-const express = require('express');
+const express = require ('express');
 const app = express();
 const mongoose = require('mongoose');
-const session = require('express-session');
-const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const Workouts = require('./models/workouts.js');
 
-app.use(methodOverride('_method'));
-app.use(session({
-  secret:'färgglad sköldpadda',
-  resave: false,
-  saveUninitialized: false
-}))
 
-app.use(express.urlencoded({extended:false}));
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(methodOverride('_method'));
 
-const usersController = require('./controllers/users.js');
-app.use('/users', usersController);
 
-const sessionsController = require('./controllers/sessions.js');
-app.use('/sessions', sessionsController);
+//controllers
+const workoutsController = require('./controllers/workouts.js');
+app.use('/workouts', workoutsController);
 
 //index route
 app.get('/', (req, res)=>{
-  res.render('index.ejs', {
-    currentUser: req.session.currentuser
-  });
+  res.render('index.ejs');
 });
 
-const mongoURI =  process.env.MONGODB_URI || 'mongodb://localhost:27017/workout';
-mongoose.connect(mongoURI);
+
+mongoose.connect('mongodb://localhost:27017/workouts');
 
 mongoose.connection.once('open', ()=>{
-  console.log('mongods are here');
-})
-
-const port = process.env.PORT || 3000;
-app.listen( port, ()=>{
-  console.log('lyssnande');
+  console.log('there is no mongod');
 });
+
+app.listen(3000, ()=>{
+  console.log('lyssnande');
+})

@@ -5,6 +5,23 @@
     <title></title>
   </head>
   <body>
-    <h1>workout logs go here</h1>
+<h1>Workouts Index</h1>
+
+<nav>
+<p>figure out how to display past workouts. look at mongoose store code</p>
+  <ul>
+      <% for(let i=0; i < workouts.length; i++){%>
+    <li>
+      <a href="/workouts/<%=workouts[i].id%>"><%=workouts[i].date%></a>
+    </li>
+    <% } %>
+  </ul>
+
+
+
+</nav>
+
+<a href="/workouts/new">Log a Workout</a>
+
   </body>
 </html>

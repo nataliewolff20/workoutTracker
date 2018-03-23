@@ -8,13 +8,13 @@
 
 <h1>Log Your Workout</h1>
 
-  <div class="container">
+<div class="container">
 
-    <form action="/sessions/workoutlog" method="POST">
+    <form action="/workouts" method="POST">
 
     <legend>Workout Details</legend>
     <label for="date">Date</label>
-      <input type="date" name="Date" placeholder="Date" id="date"/>
+      <input type="date" name="date" placeholder="Date" id="date"/>
 
     <span>Workout Type</span>
   <div class="workout-type">
@@ -30,11 +30,7 @@
       <input type="checkbox" id="yoga" name="yoga" value="yoga"/>
     </label>
   </div>
-  <div class="intensity">
-    <label for="intensity">How Intense was your workout, on a scale of 1-5. 1 being easy and 5 being the most intense. </label>
-    <input type="text" name="intensity" placeholder = "1 - 5" value="">
 
-  </div>
   <div class="notes">
     <label for="notes"><span>Notes</span></label><br/>
     <textarea name="notes" rows="8" cols="80"></textarea>
@@ -46,5 +42,7 @@
   </form>
 
   </div>
+
+
   </body>
 </html>

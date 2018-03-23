@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Show Page </h1>
+
+
+    <section>
+      <form  action="/workouts/<%workouts.id%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Workout"/>
+      </form>
+    </section>
+
+    <section>
+      <a href="/workouts/<%=workouts.id%>/edit">Edit Workout</a>
+    </section>
+
+  </body>
+</html>

@@ -5,35 +5,14 @@
     <title></title>
   </head>
   <body>
-
-    <h1>
-        <% if(currentUser) { %>
-            Hi <%=currentUser.username%>!
-        <% } else { %>
-            Welcome!
-        <% } %>
-    </h1>
+    <h1>Workout Tracker Home Page</h1>
 
     <nav>
       <ul>
         <li>
-        <a href="/sessions/new">Log In</a>
+          <a href="/workouts">Past Workouts</a>
         </li>
-        <li>
-          <a href="/users/new">Sign Up</a>
-        </li>
-
-        <% if(currentUser){ %>
-          <li>
-            <form action="/sessions?_method=DELETE" method="POST">
-              <input type="submit" value="Logout">
-            </form>
-          </li>
-          <%}%>
-
-
       </ul>
     </nav>
-
   </body>
 </html>
