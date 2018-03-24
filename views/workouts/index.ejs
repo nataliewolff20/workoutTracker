@@ -2,27 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
     <title></title>
   </head>
   <body>
-<h1>Workouts Index</h1>
+
+    <div class="container">
+
+
+<h1>Previous Workouts</h1>
 
 <nav>
-<p>figure out how to display past workouts. look at mongoose store code</p>
-  <ul>
+
+
+  <ul class= "list-group">
       <% for(let i=0; i < workouts.length; i++){%>
-    <li>
+    <li class= "list-group-item">
       <a href="/workouts/<%=workouts[i].id%>"><%=workouts[i].date%></a>
     </li>
     <% } %>
   </ul>
 
 
-
+  </div>
 </nav>
 
-<a href="/workouts/new">Log a Workout</a>
 
+  </div>
+
+  <% include ../partials/footer.ejs %>
   </body>
+
 </html>

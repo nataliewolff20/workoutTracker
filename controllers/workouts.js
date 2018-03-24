@@ -16,8 +16,20 @@ router.post('/', (req, res)=>{
   };
 
   Workouts.create(req.body, (err, createdWorkouts)=>{
+  // if (req.body.intensity = 1){
+  //   res.redirect('/workouts/1intensity');
+  // } else if
+  //   (req.body.intensity = 2){
+  //     res.redirect('/workouts/2intensity');
+  // }  else if
+  //   (req.body.intensity = 3){
+  //     res.redirect('/workouts/3intensity');
+  //   }
+  // });
+
     res.redirect('/workouts/intensity');
   });
+  
 });
 
 router.get('/', (req, res)=>{
@@ -34,6 +46,12 @@ router.get('/intensity', (req, res)=>{
 
 router.get('/1intensity', (req, res)=>{
   res.render('ratings/one.ejs')
+})
+router.get('/2intensity', (req, res)=>{
+  res.render('ratings/two.ejs')
+})
+router.get('/3intensity', (req, res)=>{
+  res.render('ratings/three.ejs')
 })
 
 
