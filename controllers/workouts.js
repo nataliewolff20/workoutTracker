@@ -4,6 +4,7 @@ const Workouts = require('../models/workouts.js');
 
 
 router.post('/', (req, res)=>{
+
   if(req.body.run === 'on'){
     req.body.run = true;
   } else {
@@ -13,7 +14,11 @@ router.post('/', (req, res)=>{
     req.body.weights = true;
   } else {
     req.body.weights = false;
-  };
+
+
+
+};
+
 
   Workouts.create(req.body, (err, createdWorkouts)=>{
   // if (req.body.intensity = 1){
@@ -29,7 +34,7 @@ router.post('/', (req, res)=>{
 
     res.redirect('/workouts/intensity');
   });
-  
+
 });
 
 router.get('/', (req, res)=>{

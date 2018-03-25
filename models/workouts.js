@@ -9,9 +9,8 @@ const Schema = mongoose.Schema;
 // });
 
 const workoutsSchema = mongoose.Schema({
-    date: Date,
-    run: Boolean,
-    weights: Boolean,
+    date: String,
+    type: String,
     notes: String
 
 });

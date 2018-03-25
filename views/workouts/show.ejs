@@ -13,18 +13,14 @@
       <li class="list-group-item">
         <p>Date: <%=workouts.date%></p>
       </li>
+
       <li class="list-group-item">
-         <p>Workout Type:
-          <% if (workouts.run === true){ %>
-                Run
-          <%} else {%>
-                Weights
-          <%}%>
-        </p>
+         <p>Workout Type:<%=workouts.type%></p>
       </li>
-      <li class="list-group-item">  <p>Intensity: <%=workouts.intensity%></p>
+
+      <li class="list-group-item">
+        <p>Notes: <%=workouts.notes%></p>
       </li>
-      <li class="list-group-item">  <p>Notes: <%=workouts.notes%></p></li>
 
     </ul>
 
